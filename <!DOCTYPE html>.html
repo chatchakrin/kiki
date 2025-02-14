@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #f4abf4;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .centered-img {
+            display: block;
+            margin: 0 auto;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #d6336c;
+            font-size: 28px;
+        }
+        .hearts {
+            font-size: 40px;
+            color: red;
+        }
+        p {
+            color: #444;
+            font-size: 18px;
+        }
+        .heart {
+            font-size: 50px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            color: red;
+            position: relative;
+            display: inline-block;
+        }
+        .pieces {
+            position: absolute;
+            font-size: 30px;
+            color: red;
+            display: none;
+        }
+        .shattered .pieces {
+            display: inline;
+            animation: scatter 0.8s forwards;
+        }
+        @keyframes scatter {
+            0% { transform: translate(0, 0); opacity: 1; }
+            100% { transform: translate(var(--x), var(--y)); opacity: 0; }
+        }
+        #hiddenImage, #hiddenSecondImage {
+            display: none;
+            margin-top: 20px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .slider {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .slide img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev { left: 0; }
+        .next { right: 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hearts"> Happy Valentine's Day💐💝</div>
+        <div>
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide"><img src="kiki.JPG" alt="Company Image 1"></div>
+                    <div class="slide"><img src="IMG_1433.JPG" alt="Company Image 2"></div>
+                    <div class="slide"><img src="IMG_25670422180926791.PNG" alt="Company Image 3"></div>
+                    <div class="slide"><img src="IMG_0342.JPG" alt="Company Image 1"></div>
+                    <div class="slide"><img src="IMG_1887.JPG" alt="Company Image 2"></div>
+                    <div class="slide"><img src="IMG_9581.JPG" alt="Company Image 3"></div>
+                    <div class="slide"><img src="IMG_0070.JPG" alt="Company Image 1"></div>
+                    <div class="slide"><img src="IMG_2046.JPG" alt="Company Image 2"></div>
+                    <div class="slide"><img src="IMG_3507.HEIC" alt="Company Image 3"></div>
+                    <div class="slide"><img src="IMG_3534.HEIC" alt="Company Image 1"></div>
+                    <div class="slide"><img src="IMG_0613.JPG" alt="Company Image 2"></div>
+                    <div class="slide"><img src="4-up on 8-8-2567 BE at 12.00 (compiled).jpg" alt="Company Image 3"></div>
+                </div>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+          </div>
+          </div>
+        <p>Happy Valentine's Day and Happy Birthday MY girlfriend💕</p>
+        <p>I wish you a very happy birthday this year and thank you for being with me until today again. I hope we will be together for a long time.</p>
+        <div class="heart" onclick="breakHeart(this)">❤️
+            <span class="pieces" style="--x:-30px; --y:-50px;">💖</span>
+            <span class="pieces" style="--x:30px; --y:-50px;">💖</span>
+            <span class="pieces" style="--x:-40px; --y:40px;">💖</span>
+            <span class="pieces" style="--x:40px; --y:40px;">💖</span>
+        </div>
+      <br>
+       <div class="heart" onclick="kiHeart(this)">❤️
+            <span class="pieces" style="--x:-30px; --y:-50px;">💖</span>
+            <span class="pieces" style="--x:30px; --y:-50px;">💖</span>
+            <span class="pieces" style="--x:-40px; --y:40px;">💖</span>
+            <span class="pieces" style="--x:40px; --y:40px;">💖</span>
+        </div>
+        <br>
+        <div class="button-container">
+            <button onclick="showImage()">🎁</button>
+            <button onclick="showSecondImage()">🎁</button>
+        </div>
+        <br>
+       <img class="centered-img" id="hiddenImage" src="Ham.JPG" alt="Surprise Image"> 
+       <p id="hiddenText" style="display: none;">ขอบคุณที่อยู่ด้วยกันตลอดเค้าดีใจมากๆๆที่ได้เป็นแฟนกับอ้วนผ่านเรื่องต่างๆมาด้วยกันดูแลกันมาตลอดนะ💝</p>
+       <img class="centered-img" id="hiddenSecondImage" src="1 year.JPG" alt="Second Surprise Image"> 
+       <p id="hiddenSecondText" style="display: none;">เค้าจะรักอ้วนไปตลอดๆเลยคอยดูแลและช่วยเหลือในเรื่องที่คำทำได้และสนับสนุนในสิ่งที่อ้วนอยากทำรักอ้วนที่สุดเลยนะ ❤️</p>
+    </div>
+
+    <script>
+        function breakHeart(element) {
+            element.innerHTML = 'I love my lover the most in the universe, to the power of infinity';
+        }
+        function kiHeart(element) {
+            element.classList.add('shattered');
+            element.innerHTML = '💐💖💕💝';
+        }
+        function showImage() {
+            document.getElementById('hiddenImage').style.display = 'block';
+            document.getElementById('hiddenText').style.display = 'block';
+        }
+        function showSecondImage() {
+            document.getElementById('hiddenSecondImage').style.display = 'block';
+            document.getElementById('hiddenSecondText').style.display = 'block';
+        }
+        let index = 0;
+        function moveSlide(step) {
+            const slides = document.querySelector(".slides");
+            const totalSlides = slides.children.length;
+            index = (index + step + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(-${index * 100}%)`;
+        }
+    </script>
+    </body>
